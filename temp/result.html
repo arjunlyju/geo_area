@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculation Result</title>
+</head>
+<body>
+    <h1>Calculation Results</h1>
+    <h2>Rectangle Areas</h2>
+    <ul>
+        {% for area in areas_rectangle %}
+            <li>{{ area }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Triangle Areas</h2>
+    <ul>
+        {% for area in areas_triangle %}
+            <li>{{ area }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Trapezoid Areas</h2>
+    <ul>
+        {% for area in areas_trapezoid %}
+            <li>{{ area }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Total Area of All Shapes: {{ total_area }}</h2>
+    <h2>Total Area in square feet : {{ square_feet }}</h2>
+    <a href="{% url 'calculate_area' %}">Calculate Again</a>
+</body>
+</html>

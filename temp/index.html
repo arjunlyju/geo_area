@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Calculator</title>
+</head>
+<body>
+    <h1>Calculate Area of Multiple Shapes</h1>
+    <form method="POST">
+        {% csrf_token %}
+
+        <h2>Rectangle Dimensions</h2>
+        <div id="rectangleInputs">
+            <label>Length:</label>
+            <input type="number" name="length" step="0.1">
+            <label>Width:</label>
+            <input type="number" name="width" step="0.1">
+        </div>
+        <button type="button" onclick="addRectangle()">Add Another Rectangle</button>
+
+        <h2>Triangle Dimensions</h2>
+        <div id="triangleInputs">
+            <label>Base:</label>
+            <input type="number" name="base_triangle" step="0.1">
+            <label>Height:</label>
+            <input type="number" name="height_triangle" step="0.1">
+        </div>
+        <button type="button" onclick="addTriangle()">Add Another Triangle</button>
+
+        <h2>Trapezoid Dimensions</h2>
+        <div id="trapezoidInputs">
+            <label>Base 1:</label>
+            <input type="number" name="base1_trapezoid" step="0.1">
+            <label>Base 2:</label>
+            <input type="number" name="base2_trapezoid" step="0.1">
+            <label>Height:</label>
+            <input type="number" name="height_trapezoid" step="0.1">
+        </div>
+        <button type="button" onclick="addTrapezoid()">Add Another Trapezoid</button>
+        </br>
+        <button type="submit">Calculate</button>
+    </form>
+
+    <script>
+        function addRectangle() {
+            const div = document.createElement("div");
+            div.innerHTML = `<label>Length:</label><input type="number" name="length" step="0.1">
+                             <label>Width:</label><input type="number" name="width" step="0.1">`;
+            document.getElementById("rectangleInputs").appendChild(div);
+        }
+
+        function addTriangle() {
+            const div = document.createElement("div");
+            div.innerHTML = `<label>Base:</label><input type="number" name="base_triangle" step="0.1">
+                             <label>Height:</label><input type="number" name="height_triangle" step="0.1">`;
+            document.getElementById("triangleInputs").appendChild(div);
+        }
+
+        function addTrapezoid() {
+            const div = document.createElement("div");
+            div.innerHTML = `<label>Base 1:</label><input type="number" name="base1_trapezoid" step="0.1">
+                             <label>Base 2:</label><input type="number" name="base2_trapezoid" step="0.1">
+                             <label>Height:</label><input type="number" name="height_trapezoid" step="0.1">`;
+            document.getElementById("trapezoidInputs").appendChild(div);
+        }
+    </script>
+</body>
+</html>
